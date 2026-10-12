@@ -325,6 +325,11 @@ export default function CountryCarousel({ onOpenModal }) {
     const zIndex = 30 - absOffset * 5;
 
     return {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      marginTop: '-215px',
+      marginLeft: '-160px',
       transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
       opacity,
       zIndex,
@@ -485,7 +490,7 @@ export default function CountryCarousel({ onOpenModal }) {
           {/* Prev / Next Carousel Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-6 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[#0B3765] shadow-xl flex items-center justify-center hover:bg-[#0B3765] hover:text-white transition cursor-pointer"
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[#0B3765] shadow-xl flex items-center justify-center hover:bg-[#0B3765] hover:text-white transition cursor-pointer"
             aria-label="Previous Country"
           >
             <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -495,7 +500,7 @@ export default function CountryCarousel({ onOpenModal }) {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-6 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[#0B3765] shadow-xl flex items-center justify-center hover:bg-[#0B3765] hover:text-white transition cursor-pointer"
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[#0B3765] shadow-xl flex items-center justify-center hover:bg-[#0B3765] hover:text-white transition cursor-pointer"
             aria-label="Next Country"
           >
             <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,162 @@
+/* IFS Consultants - Custom Landing Page Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --color-primary-navy: #0B3765;
+  --color-navy-dark: #072545;
+  --color-navy-light: #164e8a;
+  --color-accent-gold: #F9B900;
+  --color-gold-hover: #e5aa00;
+  --color-gold-light: #FEF7E6;
+  --color-bg-light: #F4F8FC;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text-main);
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+}
+
+/* Offset for smooth scrolling with sticky header */
+section[id], div[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Custom Soft Shadows */
+.shadow-soft {
+  box-shadow: 0 12px 32px -4px rgba(11, 55, 101, 0.08), 0 4px 12px -2px rgba(11, 55, 101, 0.04);
+}
+
+.shadow-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -8px rgba(11, 55, 101, 0.14), 0 6px 16px -2px rgba(11, 55, 101, 0.06);
+}
+
+/* Gold CTA Button styling with depth & accessible focus */
+.btn-gold {
+  background-color: #F9B900;
+  color: #0B3765;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px 0 rgba(249, 185, 0, 0.38);
+}
+
+.btn-gold:hover {
+  background-color: #e5aa00;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(249, 185, 0, 0.48);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-navy {
+  background-color: #0B3765;
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px 0 rgba(11, 55, 101, 0.28);
+}
+
+.btn-navy:hover {
+  background-color: #072545;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(11, 55, 101, 0.38);
+}
+
+/* Mobile Sticky Bar safe padding */
+.has-sticky-mobile {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .has-sticky-mobile {
+    padding-bottom: 0;
+  }
+}
+
+/* Custom Accordion Chevron Animation */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Subtle background pattern */
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(11, 55, 101, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* High contrast accessibility outline */
+:focus-visible {
+  outline: 2px solid #F9B900;
+  outline-offset: 2px;
+}
+
+/* Floating badge pulse animation */
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* 3D Perspective Curved Carousel Styles (User Reference Architecture) */
+.carousel-3d-stage {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+#country-card-stage {
+  transform-style: preserve-3d;
+}
+
+.carousel-3d-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -195px;
+  margin-left: -140px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, border-color 0.4s ease, box-shadow 0.6s ease;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@media (min-width: 640px) {
+  .carousel-3d-card {
+    margin-top: -215px;
+    margin-left: -160px;
+  }
+}
+
+.carousel-3d-card.is-center {
+  box-shadow: 0 25px 60px -12px rgba(11, 55, 101, 0.28), 0 0 0 3px #F9B900;
+  border-color: #F9B900;
+}
